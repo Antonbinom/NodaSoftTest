@@ -1,0 +1,129 @@
+body {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background: #c0dbd9;
+}
+.header {
+  padding: 30px 30.5px;
+  background: #7faff7;
+}
+.open-btn {
+  padding: 8px 15px;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  background: #a5c7f9;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.first {
+  display: grid;
+  grid-template:
+    [start] 'one two three' 198px [row2]
+    [row2] 'four four five' 198px [row-end] / 0.661fr 1fr 0.2712fr;
+  gap: 15px;
+  margin: 15px 0;
+  background: #b3f95a;
+}
+.first-item {
+  position: relative;
+  font-size: 53px;
+  line-height: 62px;
+  color: #ffffff;
+  background: #8ad191;
+  counter-increment: number;
+}
+.first-item:before {
+  content: counter(number) ' ';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 53px;
+  line-height: 62px;
+  color: #ffffff;
+}
+.first-item:nth-child(1) {
+  grid-area: one;
+}
+.first-item:nth-child(2) {
+  grid-area: two;
+}
+.first-item:nth-child(3) {
+  grid-area: three;
+}
+.first-item:nth-child(4) {
+  grid-area: four;
+}
+.first-item:nth-child(5) {
+  grid-area: five;
+}
+
+.second {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  margin-bottom: 100px;
+  background: #88b5bf;
+}
+.second-item {
+  width: 100vw;
+  max-width: 255px;
+  max-height: 199px;
+  background: #0d89b0;
+}
+.second-item:not(:last-child) {
+  margin-right: 30px;
+}
+.footer {
+  height: 100px;
+  background: #7faff7;
+}
+
+.pop-up {
+  position: fixed;
+  display: flex;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  padding: 15px;
+  font-size: 53px;
+  line-height: 62px;
+  color: #000000;
+  background: #ffffff;
+  z-index: 1;
+  transition: top 0.5s;
+}
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 15px;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  background: #7faff6;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+.close-btn:hover {
+  transform: rotate(180deg);
+}
+.pop-up:target {
+  top: 50%;
+}
